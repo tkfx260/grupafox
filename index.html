@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>grupafox — JustWatch Search</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="favicon.png" />
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+  <header class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-6 shadow-md">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold">grupafox</h1>
+        <p class="text-sm text-indigo-100/80">Szybkie wyszukiwanie ofert filmów i seriali (JustWatch)</p>
+      </div>
+      <div class="text-sm">Host: GitHub Pages</div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6">
+    <section class="bg-slate-800 p-4 rounded-lg mb-6 shadow">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <input id="q" type="search" placeholder="Szukaj tytułu..." class="p-3 rounded bg-slate-900/60 outline-none"/>
+        <div>
+          <label class="text-xs text-slate-300">Audio (kody ISO, np. pl,en)</label>
+          <input id="audio" class="p-2 rounded bg-slate-900/60 w-full" placeholder="pl, en"/>
+        </div>
+        <div>
+          <label class="text-xs text-slate-300">Napisy (kody ISO, np. pl,en)</label>
+          <input id="subs" class="p-2 rounded bg-slate-900/60 w-full" placeholder="pl, en"/>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 mt-3">
+        <label class="inline-flex items-center gap-2"><input id="filterNew" type="checkbox"/> <span class="text-sm">Nowo dodane (30 dni)</span></label>
+        <label class="inline-flex items-center gap-2"><input id="filterPolish" type="checkbox"/> <span class="text-sm">Tylko polskie (audio lub napisy)</span></label>
+        <button id="searchBtn" class="ml-auto bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded">Szukaj</button>
+      </div>
+    </section>
+
+    <section id="results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></section>
+
+    <div id="status" class="mt-6 text-sm text-slate-300"></div>
+  </main>
+
+  <footer class="max-w-5xl mx-auto p-6 text-slate-400 text-sm">
+    <div>Wykorzystuje publiczne API JustWatch przez proxy (skonfiguruj PROXY_BASE w <code>app.js</code> jeśli potrzebujesz).</div>
+    <div class="mt-2">Instrukcja wdrożenia w pliku <code>README.md</code>.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
