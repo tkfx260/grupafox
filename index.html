@@ -3,41 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JustWatch Browser</title>
+  <title>JustWatch Search PL</title>
   <link rel="stylesheet" href="bootstrap.min.css">
   <style>
     body { background: #f8f9fa; }
-    .card { transition: transform .2s; }
-    .card:hover { transform: scale(1.02); }
-    .spinner { text-align: center; margin: 2em 0; }
+    .card:hover { transform: scale(1.02); transition: 0.2s; }
+    .spinner-border { width: 2rem; height: 2rem; }
+    footer { margin-top: 60px; font-size: 0.9rem; color: #666; }
   </style>
 </head>
 <body>
-  <div class="container py-4">
-    <h1 class="text-center mb-5">🎬 JustWatch API Demo</h1>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">🎬 JustWatch Search PL</h1>
+    <p class="text-center text-muted mb-5">
+      Wyszukiwarka filmów i seriali na podstawie JustWatch API
+    </p>
 
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h3 class="card-title">📺 Serial</h3>
-            <div id="tv-show" class="spinner text-muted">Ładowanie danych...</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h3 class="card-title">🎥 Film</h3>
-            <div id="movie" class="spinner text-muted">Ładowanie danych...</div>
-          </div>
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-8">
+        <div class="input-group">
+          <input type="text" id="searchInput" class="form-control" placeholder="Wpisz tytuł filmu lub serialu..." />
+          <button class="btn btn-primary" id="searchBtn">Szukaj</button>
         </div>
       </div>
     </div>
 
-    <footer class="text-center mt-5 text-secondary">
-      <small>© 2025 JustWatch Browser Demo — API via CreativeClarity Proxy</small>
+    <div id="results" class="row g-4 justify-content-center">
+      <div class="text-center text-muted">Wprowadź tytuł, aby rozpocząć wyszukiwanie.</div>
+    </div>
+
+    <footer class="text-center">
+      <small>© 2025 JustWatch Search PL — dane z JustWatch API via CreativeClarity Proxy</small>
     </footer>
   </div>
 

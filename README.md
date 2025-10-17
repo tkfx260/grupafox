@@ -1,22 +1,32 @@
-# JustWatch Browser Demo
+# JustWatch Search PL
 
-Prosta statyczna strona HTML, która pobiera dane o filmie i serialu z API JustWatch
-przez proxy `https://cors-anywhere.creativeclaritycreations.com/`.
+Statyczna aplikacja webowa umożliwiająca wyszukiwanie filmów i seriali z JustWatch API.
 
-### 🔧 Struktura:
-- `index.html` – główny interfejs
-- `script.js` – logika pobierania danych z API
-- `bootstrap.min.css` – stylowanie
-- `dotnet.js` – plik dodatkowy
+Działa w pełni po stronie klienta (HTML + JS) i korzysta z publicznego proxy:
+**https://cors-anywhere.creativeclaritycreations.com/**
 
-### 🚀 Publikacja na GitHub Pages
-1. Utwórz repozytorium, np. `justwatch-site`
-2. Wgraj pliki z projektu
-3. W ustawieniach repozytorium:
-   - **Settings → Pages**
-   - Branch: `main`, folder: `/ (root)`
-4. Po kilku minutach strona będzie działać pod adresem:
+---
 
-   ```
-   https://twoja-nazwa.github.io/justwatch-site/
-   ```
+## 🚀 Jak uruchomić lokalnie
+
+1. Otwórz `index.html` w przeglądarce.
+
+## 🌐 Publikacja na GitHub Pages
+
+1. Utwórz nowe repozytorium, np. `JustWatch-SearchPL`
+2. Wgraj pliki:
+   - `index.html`
+   - `script.js`
+   - `bootstrap.min.css`
+   - `dotnet.js`
+3. Włącz **GitHub Pages** (Settings → Pages → Branch: `main`, folder `/`)
+4. Strona pojawi się pod adresem:
+
+```
+https://twoja-nazwa.github.io/JustWatch-SearchPL/
+```
+
+---
+
+### 📄 Licencja
+MIT License — możesz dowolnie modyfikować i wdrażać.
