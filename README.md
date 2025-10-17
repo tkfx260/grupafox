@@ -1,33 +1,26 @@
 
-# grupafox — JustWatch Search (static)
+# grupafox — Upflix Search (static)
 
-Statyczna strona frontendowa wyszukująca filmy i seriale korzystając z publicznego API JustWatch (przez proxy CORS).
-Projekt jest gotowy do publikacji na GitHub Pages (push na branch `main` i włączenie Pages).
+Strona statyczna do przeszukiwania upflix.com. **Demo**: ze względu na CORS i możliwe ograniczenia właściciela strony, zalecane jest użycie serwerowego proxy, które pobierze stronę upflix.com i zwróci HTML lub JSON do klienta.
 
 ## Co zawiera
-- `index.html` — aplikacja SPA (HTML + Tailwind + JS)
-- `app.js` — logika wyszukiwania + filtrowania (audio, subs, nowo dodane 30 dni, polski)
-- `README.md` — instrukcja
-- `favicon.png` — ikona (placeholder)
-- `DEPLOY.md` — instrukcje szybkiego deployu na GitHub Pages
+- index.html
+- upflix.js
+- README.md
 
 ## Konfiguracja proxy
-Domyślnie `app.js` używa `https://cors-proxy.cooks.fyi/https://apis.justwatch.com` jako proxy (PROXY_BASE).  
-Jeśli chcesz używać własnego proxy, zmień wartość `PROXY_BASE` w `app.js`.
+W `upflix.js` ustaw `PROXY_BASE` na adres Twojego proxy (np. Cloudflare Worker lub inny serwer który przyjmuje `GET <proxy_url><target_url>` i zwraca zawartość targetu). Domyślnie ustawiono `https://cors-proxy.cooks.fyi/` co działa do testów, ale może być niestabilne.
 
-## Wdrożenie na GitHub Pages (szybko)
-1. Stwórz nowe repo w GitHub o nazwie `grupafox` (publiczne).
-2. Skopiuj pliki z tego folderu do repo i commituj (najprościej przeciągnij i upuść w web UI albo użyj `git`):
+## Deployment na GitHub Pages
+1. Utwórz repo `grupafox-upflix` na GitHub.
+2. Wgraj pliki (Upload files) albo użyj git:
    ```bash
    git init
    git add .
-   git commit -m "Initial grupafox site"
+   git commit -m "Initial upflix search site"
    git branch -M main
-   git remote add origin https://github.com/<twoj-login>/grupafox.git
+   git remote add origin https://github.com/<twoj-login>/grupafox-upflix.git
    git push -u origin main
    ```
-3. Na GitHub: Repo -> Settings -> Pages -> Source: wybierz `main` branch i folder `/ (root)`. Zapisz.
-4. Po chwili strona będzie pod `https://<twoj-login>.github.io/grupafox/`
-
-## Uwagi
-- Publiczne API JustWatch może zmieniać strukturę odpowiedzi. Jeśli coś nie działa, zalecane jest uruchomienie własnego prostego proxy (np. na Heroku/Cloudflare Workers) które przekieruje żądania do `https://apis.justwatch.com` i doda CORS header.
+3. Na GitHub -> Settings -> Pages: wybierz `main` branch i folder `/ (root)`.
+4. Strona dostępna pod `https://<twoj-login>.github.io/grupafox-upflix/`.
