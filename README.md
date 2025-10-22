@@ -1,32 +1,20 @@
-# JustWatch Search PL
+# Legal Software Hub — Szablon strony
 
-Statyczna aplikacja webowa umożliwiająca wyszukiwanie filmów i seriali z JustWatch API.
+Ten repozytorium zawiera prosty, nowoczesny szablon statycznej strony przeznaczonej do **legalnej** prezentacji i dystrybucji oprogramowania (np. projekty open-source, freeware, instalatory z prawidłową licencją).
 
-Działa w pełni po stronie klienta (HTML + JS) i korzysta z publicznego proxy:
-**https://cors-anywhere.creativeclaritycreations.com/**
+## Co jest w repozytorium
+- `index.html` — strona główna
+- `assets/style.css` — prosty, responsywny design
+- `assets/script.js` — przykładowe dane i interakcje
+- `README.md` — ten plik
+- `LICENSE` — MIT
 
----
+## Jak opublikować na GitHub Pages
+1. Utwórz nowe repozytorium na GitHub.
+2. Skopiuj pliki do repozytorium.
+3. W ustawieniach repozytorium (Pages) wybierz branch `main` (lub `gh-pages`) i folder `/` jako źródło.
+4. Po chwili strona będzie dostępna pod `https://<your-username>.github.io/<repo>/`
 
-## 🚀 Jak uruchomić lokalnie
+## Ważne zastrzeżenia prawne
+Używaj tej strony wyłącznie do **legalnego** udostępniania plików. Nie zamieszczaj materiałów naruszających prawa autorskie ani nie udzielaj porad, jak omijać zabezpieczenia prawne.
 
-1. Otwórz `index.html` w przeglądarce.
-
-## 🌐 Publikacja na GitHub Pages
-
-1. Utwórz nowe repozytorium, np. `JustWatch-SearchPL`
-2. Wgraj pliki:
-   - `index.html`
-   - `script.js`
-   - `bootstrap.min.css`
-   - `dotnet.js`
-3. Włącz **GitHub Pages** (Settings → Pages → Branch: `main`, folder `/`)
-4. Strona pojawi się pod adresem:
-
-```
-https://twoja-nazwa.github.io/JustWatch-SearchPL/
-```
-
----
-
-### 📄 Licencja
-MIT License — możesz dowolnie modyfikować i wdrażać.
