@@ -3,63 +3,84 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Legal Software Hub — Szablon</title>
-  <meta name="description" content="Nowoczesny szablon strony do prezentacji i legalnego dystrybuowania oprogramowania (open-source / freeware)." />
+  <title>xwarez — multimedia hub</title>
+  <meta name="description" content="xwarez — katalog filmów, seriali, gier, programów i muzyki (legalne opisy, trailery i recenzje).">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container">
-      <a class="brand" href="#">LegalSoftwareHub</a>
-      <nav>
-        <a href="#projects">Projekty</a>
-        <a href="#about">O nas</a>
-        <a href="#contact">Kontakt</a>
-        <a class="btn" href="https://github.com/your-repo">GitHub</a>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">xwarez</div>
+
+      <nav class="menu">
+        <button data-filter="Wszystko" class="active">Wszystko</button>
+        <button data-filter="Filmy">Filmy 🎬</button>
+        <button data-filter="Serial">Serial 📺</button>
+        <button data-filter="Gry">Gry 🎮</button>
+        <button data-filter="Programy">Programy 💾</button>
+        <button data-filter="Muzyka">Muzyka 🎵</button>
       </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Prezentuj i dystrybuuj oprogramowanie — legalnie</h1>
-        <p>Nowoczesny, responsywny szablon strony do prezentacji projektów open-source, freeware i plików do pobrania z licencją.</p>
-        <div class="actions">
-          <a class="btn large" href="#projects">Zobacz projekty</a>
-          <a class="btn ghost" href="#about">Dowiedz się więcej</a>
+      <section class="news">
+        <h4>Nowości</h4>
+        <div id="news-list">
+          <!-- injected -->
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="projects" class="container projects">
-      <h2>Wybrane projekty</h2>
-      <div class="grid" id="projects-grid">
-        <!-- Project cards injected by JS -->
-      </div>
-    </section>
+      <section class="auth">
+        <div id="auth-area"></div>
+      </section>
+    </aside>
 
-    <section id="about" class="container about">
-      <h2>O stronie</h2>
-      <p>Ten szablon jest przeznaczony wyłącznie do legalnego wykorzystania: prezentacji projektów, hostowania plików z poprawną licencją oraz dzielenia się oprogramowaniem z uprawnieniami autorów.</p>
-    </section>
+    <main class="content">
+      <header class="topsearch">
+        <input id="search" placeholder="Szukaj tytułu, opisu..." />
+        <div class="controls">
+          <select id="sort">
+            <option value="popular">Najpopularniejsze</option>
+            <option value="new">Najnowsze</option>
+          </select>
+          <button id="register-btn">Zarejestruj / Zaloguj</button>
+        </div>
+      </header>
 
-    <section id="contact" class="container contact">
-      <h2>Kontakt</h2>
-      <form id="contact-form">
-        <label>Imię i nazwisko<input name="name" required></label>
-        <label>Email<input name="email" type="email" required></label>
-        <label>Wiadomość<textarea name="message" rows="4"></textarea></label>
-        <button class="btn" type="submit">Wyślij</button>
-      </form>
-    </section>
-  </main>
+      <section id="items-area">
+        <!-- center items injected here -->
+      </section>
 
-  <footer class="footer">
-    <div class="container">
-      <small>© 2025 LegalSoftwareHub — szablon. Używaj wyłącznie do legalnego udostępniania oprogramowania.</small>
+      <div id="pagination" class="pagination"></div>
+    </main>
+
+    <aside class="rightbar">
+      <h4>Najpopularniejsze</h4>
+      <div id="popular-list"></div>
+    </aside>
+  </div>
+
+  <!-- Detail modal / page -->
+  <div id="detail-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="detail-close" class="close">✕</button>
+      <div id="detail-body"></div>
     </div>
-  </footer>
+  </div>
+
+  <!-- Registration modal -->
+  <div id="reg-modal" class="modal hidden">
+    <div class="modal-content small">
+      <button id="reg-close" class="close">✕</button>
+      <h3>Rejestracja / Logowanie (demo)</h3>
+      <form id="reg-form">
+        <label>Imię: <input name="name" required /></label>
+        <label>Email: <input name="email" type="email" required /></label>
+        <div class="row">
+          <button type="submit" class="btn primary">Zarejestruj</button>
+          <button type="button" id="reg-close-2" class="btn">Anuluj</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="assets/script.js"></script>
 </body>

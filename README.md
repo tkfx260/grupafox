@@ -1,20 +1,26 @@
-# Legal Software Hub — Szablon strony
+# xwarez — static multimedia hub (HTML/CSS/JS)
 
-Ten repozytorium zawiera prosty, nowoczesny szablon statycznej strony przeznaczonej do **legalnej** prezentacji i dystrybucji oprogramowania (np. projekty open-source, freeware, instalatory z prawidłową licencją).
+Prosty, nowoczesny szablon statycznej strony do katalogowania Filmów, Seriali, Gier, Programów i Muzyki.
+Projekt celowo **legalny** — prezentuje opisy, trailery i okładki. Nie udostępnia nielegalnych plików.
 
-## Co jest w repozytorium
-- `index.html` — strona główna
-- `assets/style.css` — prosty, responsywny design
-- `assets/script.js` — przykładowe dane i interakcje
+## Jak używać
+1. Rozpakuj pliki i wrzuć do repo GitHub (web UI lub git).
+2. Jeśli chcesz, aby strona pokazywała aktualne popularne filmy z TMDB, pobierz klucz API:
+   - Załóż konto na https://www.themoviedb.org
+   - W sekcji ustawień API wygeneruj klucz
+   - Otwórz `assets/script.js` i wstaw klucz w zmiennej `TMDB_API_KEY`
+
+Bez klucza TMDB strona użyje przykładowych danych (5 przykładowych artykułów + więcej losowych przykładów).
+
+## Struktura
+- `index.html` — główna strona
+- `assets/style.css` — styl (ciemnoniebieski / grafitowy)
+- `assets/script.js` — logika: render, pagination, TMDB optional, rejestracja (localStorage)
 - `README.md` — ten plik
 - `LICENSE` — MIT
 
-## Jak opublikować na GitHub Pages
-1. Utwórz nowe repozytorium na GitHub.
-2. Skopiuj pliki do repozytorium.
-3. W ustawieniach repozytorium (Pages) wybierz branch `main` (lub `gh-pages`) i folder `/` jako źródło.
-4. Po chwili strona będzie dostępna pod `https://<your-username>.github.io/<repo>/`
+## Wymagania
+Strona jest czysta statyczna — wystarczy opublikować na GitHub Pages.
 
-## Ważne zastrzeżenia prawne
-Używaj tej strony wyłącznie do **legalnego** udostępniania plików. Nie zamieszczaj materiałów naruszających prawa autorskie ani nie udzielaj porad, jak omijać zabezpieczenia prawne.
-
+## Uwaga prawna
+Używaj serwisu wyłącznie do legalnych treści i z poszanowaniem praw autorskich. Nie umieszczaj materiałów bez zgody właścicieli praw.
